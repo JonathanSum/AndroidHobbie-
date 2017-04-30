@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 
 import static com.example.android.miwok.R.id.colors;
 import static com.example.android.miwok.R.id.phrases;
