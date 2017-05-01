@@ -1,8 +1,6 @@
 package com.example.android.miwok;
-import android.media.AudioManager;
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import java.util.ArrayList;
+import android.media.AudioManager;
 
 
 ///**
@@ -62,7 +60,23 @@ public class FamilyFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
+    public static final String ARG_PAGE = "ARG_PAGE";
 
+    private int mPage;
+
+    public static FamilyFragment newInstance(int page) {
+        Bundle args = new Bundle();
+        args.putInt(ARG_PAGE, page);
+        FamilyFragment fragment = new FamilyFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPage = getArguments().getInt(ARG_PAGE);
+    }
 
 
     @Override

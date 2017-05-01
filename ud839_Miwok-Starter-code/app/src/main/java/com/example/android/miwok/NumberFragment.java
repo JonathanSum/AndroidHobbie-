@@ -2,19 +2,17 @@ package com.example.android.miwok;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.media.AudioManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import java.util.ArrayList;
-import java.util.List;
+import android.media.AudioManager;
+
 
 
 public class NumberFragment extends Fragment {
@@ -59,22 +57,23 @@ public class NumberFragment extends Fragment {
             releaseMediaPlayer();
         }
     };
-    public static final String ARG_PAGE = "NUMBER";
+    public static final String ARG_PAGE = "ARG_PAGE";
+
     private int mPage;
 
-    public static NumberFragment newInstance(int page){
+    public static NumberFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         NumberFragment fragment = new NumberFragment();
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

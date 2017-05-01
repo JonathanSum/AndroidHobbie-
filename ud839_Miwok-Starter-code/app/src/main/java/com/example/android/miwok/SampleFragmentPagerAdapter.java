@@ -10,26 +10,41 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 4;
-    private String tabTitles[] = new String[]{"NUMBER", "FAMILY", "COLORS","PHRASES"};
+    private String tabTitles[] = new String[]{"NUMBER", "FAMILY", "COLORS", "PHRASES" };
     private Context context;
 
-    public SampleFragmentPagerAdapter(FragmentManager fm, Context context){
+    public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
     }
+
     @Override
-    public int getCount(){
-        return PAGE_COUNT;
+    public int getCount() {
+        return 4;
     }
+
     @Override
-    public Fragment getItem(int position){
-        return PageFragment.newInstance(position + 1);
+    public Fragment getItem(int position) {
+
+        if (position == 0) {
+            return new NumberFragment().newInstance(position );
+        } else if(position ==1) {
+            return new FamilyFragment().newInstance(position + 1);
+        } else if (position == 2) {
+            return new ColorFragment().newInstance(position + 2);
+        } else {
+            return new PhrasesFragment().newInstance(position +3);
+        }
+//        return PageFragment.newInstance(position + 1);
     }
+
+
+//       ;
+
     @Override
-    public CharSequence getPageTitle(int position){
+    public CharSequence getPageTitle(int position) {
         //Generate title based on item position
         return tabTitles[position];
     }
 
-    }
+}
