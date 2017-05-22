@@ -37,52 +37,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //NumbersClickListener clickListner = new NumbersClickListener();
 
+
         //Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this));
-
         //Give the Tablayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
 
-//        TextView numbers = (TextView) findViewById(R.id.numbers);
-//        numbers.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
-//                startActivity(numbersIntent);
-//            }
-//        });
-//
-//        TextView family = (TextView) findViewById(R.id.family);
-//        family.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
-//                startActivity(familyIntent);
-//            }
-//        });
-//        TextView colors = (TextView) findViewById(R.id.colors);
-//        colors.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent colorsIntent = new Intent(MainActivity.this, ColorActivity.class);
-//                startActivity(colorsIntent);
-//            }
-//        });
-//        TextView phrases = (TextView) findViewById(R.id.phrases);
-//        phrases.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-//                startActivity(phrasesIntent);
-//            }
-//        });
 
     }
-//    public void openNumberList(View view){
-//        Intent i = new Intent(this, NumbersActivity.class);
-//        startActivities(i);
-//    }
 }
